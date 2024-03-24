@@ -1,1 +1,1 @@
----This configuration is tailored to provide an optimized development environment for coding full-stack applications in TypeScript (Next.js, React, etc.) and for low-level programming in C, Go, Rust, and other languages.
+This configuration is tailored to provide an optimized development environment for coding full-stack applications in TypeScript (Next.js, React, etc.) and for low-level programming in C, Go, Rust, and other languages.
