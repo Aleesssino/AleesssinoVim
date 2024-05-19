@@ -5,7 +5,7 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 local Util = require("lazy.util")
 
-keymap.set("n", "<C-_>", function()
+keymap.set("n", "<C-/>", function()
   Util.float_term(nil, { border = "rounded" })
 end, { desc = "Term with border" })
 

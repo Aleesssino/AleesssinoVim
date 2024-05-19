@@ -46,6 +46,21 @@ return {
     end,
   },
 
+  -- Neovim plugin to improve the default vim.ui interfaces
+  {
+    "stevearc/dressing.nvim",
+    event = "BufEnter",
+    config = function()
+      require("dressing").setup({
+        input = {
+          win_options = {
+            winblend = 0,
+          },
+        },
+      })
+    end,
+  },
+
   -- statusline
   {
     "nvim-lualine/lualine.nvim",

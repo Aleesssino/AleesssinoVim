@@ -35,5 +35,8 @@ vim.opt.splitright = true
 vim.opt.splitkeep = "cursor"
 vim.opt.mouse = ""
 
+-- Turn off cursorline visibility
+vim.opt.cursorline = false
+
 -- Add asterisks in block comments
 vim.opt.formatoptions:append({ "r" })
