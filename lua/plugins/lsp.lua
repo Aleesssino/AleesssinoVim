@@ -12,6 +12,10 @@ return {
         "css-lsp",
       })
     end,
+
+    config = {
+      ui = { height = 0.85, border = "rounded" },
+    },
   },
 
   {

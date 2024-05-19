@@ -18,6 +18,35 @@ return {
     local cmp = require("cmp")
 
     local luasnip = require("luasnip")
+    --- this must be changed
+    local filename_without_ext = function()
+      return vim.fn.expand("%:t:r")
+    end
+
+    -- Snippet for Typescript React Function Component
+    luasnip.add_snippets("typescriptreact", {
+      luasnip.snippet({
+        trig = "fc",
+        namr = "Typescript React Function Component",
+        dscr = "Typescript React Function Component",
+      }, {
+        luasnip.text_node({ "import { FC } from 'react'", "", "interface " }),
+        luasnip.function_node(filename_without_ext, {}),
+        luasnip.text_node({ "Props {", "  " }),
+        luasnip.insert_node(1),
+        luasnip.text_node({ "", "}", "", "const " }),
+        luasnip.function_node(filename_without_ext, {}),
+        luasnip.text_node({ ": FC<" }),
+        luasnip.function_node(filename_without_ext, {}),
+        luasnip.text_node({ "Props> = ({ " }),
+        luasnip.insert_node(2),
+        luasnip.text_node({ " }) => {", "  return <div>" }),
+        luasnip.function_node(filename_without_ext, {}),
+        luasnip.text_node({ "</div>", "}", "", "export default " }),
+        luasnip.function_node(filename_without_ext, {}),
+      }),
+    })
+    --- end of change
 
     local lspkind = require("lspkind")
 
@@ -40,7 +69,18 @@ return {
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
         ["<C-e>"] = cmp.mapping.abort(), -- close completion window
-        ["<CR>"] = cmp.mapping.confirm({ select = false }),
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        ["<Tab>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.select_next_item()
+          elseif luasnip.expand_or_jumpable() then
+            luasnip.expand_or_jump()
+          elseif has_words_before() then
+            cmp.complete()
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
       }),
       -- sources for autocompletion
       sources = cmp.config.sources({
