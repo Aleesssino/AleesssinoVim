@@ -17,12 +17,6 @@
 
   <hr>
 
-<div align="center"> 
-  <img alt="types" src="https://github.com/Aleesssino/AleesssinoVim/assets/97041873/82c08cda-eeb8-4c01-be80-7abcf1e4307c" />
-</div>
-
-  <hr>
-
 <div align> 
   <img alt="not transparent bg" src="https://github.com/Aleesssino/AleesssinoVim/assets/97041873/492b2656-4b14-4641-8096-7bf2f641ae50"/>
 </div>
