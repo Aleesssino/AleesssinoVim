@@ -10,16 +10,20 @@
 </div>
 
   <hr>
-
+<details><summary>In Action</summary>
+  
 <div align="center">
   <img alt="action" src="https://github.com/Aleesssino/AleesssinoVim/assets/97041873/312a8223-1deb-463a-a8d8-610039a8d04e" />
 </div>
 
   <hr>
 
-<div align> 
-  <img alt="not transparent bg" src="https://github.com/Aleesssino/AleesssinoVim/assets/97041873/492b2656-4b14-4641-8096-7bf2f641ae50"/>
-</div>
+https://github.com/Aleesssino/AleesssinoVim/assets/97041873/095f9f0c-55f0-4dbd-8df1-f92c75431bdb
+</details>
+
+  <hr>
+
+
 
 
 ## ✨ Features
