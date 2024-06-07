@@ -30,10 +30,10 @@
 
 ## ✨ Features
 
-- 🔥 Transform your Neovim into a full-fledged IDE
-- 💤 Easily customize and extend your config with [lazy.nvim](https://github.com/folke/lazy.nvim)
 - 🚀 Blazingly fast
-- 🧹 Sane default settings for options, autocmds, and keymaps
+- 🔥 LazyVim based full-fledged IDE
+- 💤 Easily customize and extend your config with [lazy.nvim](https://github.com/folke/lazy.nvim)
+- 🀄 Menu, autocmds, snippets and keymaps.. everything configured for rapid development
 - 📦 Comes with a wealth of plugins pre-configured and ready to use
 
 ## ⚡️ Requirements
@@ -46,7 +46,7 @@
 ## 🚀 Getting Started
 
 
-<details><summary>Install the <a href="https://github.com/LazyVim/starter">LazyVim Starter</a></summary>
+<details><summary>Installation</summary>
 
 - Make a backup of your current Neovim files:
 
@@ -55,10 +55,10 @@
   mv ~/.local/share/nvim ~/.local/share/nvim.bak
   ```
 
-- Clone the starter
+- Clone this repository
 
   ```sh
-  git clone https://github.com/LazyVim/starter ~/.config/nvim
+  git clone git@github.com:Aleesssino/AleesssinoVim.git ~/.config/nvim
   ```
 
 - Remove the `.git` folder, so you can add it to your own repo later
@@ -73,6 +73,29 @@
   nvim
   ```
 
-  Refer to the comments in the files on how to customize **LazyVim**.
+- You can optionally add an alias to your .bashrc file to use nvim as the default editor when you type vi.
+
+  open .bashrc file:
+  ```sh
+  vi ~/.bashrc
+  ```
+  Add the following line to the end of the file:
+  ```sh
+  alias vi="nvim"
+  ```
+
+  Applly the changes:
+  ```sh
+  source ~/.bashrc
+  ```
+- Start Neovim!
+  ```sh
+  vi
+  ```
+
+  
+  Refer to the comments in the files on how to customize **AleesssinoVim** & **https://www.lazyvim.org/**.
+  </hr>
+  Make it yours!
 
 </details>
