@@ -40,7 +40,8 @@ https://github.com/Aleesssino/AleesssinoVim/assets/97041873/095f9f0c-55f0-4dbd-8
 - Git >= **2.19.0** (for partial clones support)
 - a [Nerd Font](https://www.nerdfonts.com/) **_(optional)_**
 - a **C** compiler for `nvim-treesitter`. See [here](https://github.com/nvim-treesitter/nvim-treesitter#requirements)
-
+- You can use this [**script**](https://github.com/Aleesssino/scripts/tree/9bd4c6ea623d15dc7611df21cd8f233d0ac8e6ad/Neovim-setup-for-Lazy)
+  
 ## 🚀 Getting Started
 
 
