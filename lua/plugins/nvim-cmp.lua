@@ -45,6 +45,17 @@ return {
         luasnip.text_node({ "</div>", "}", "", "export default " }),
         luasnip.function_node(filename_without_ext, {}),
       }),
+      luasnip.snippet({
+        trig = "fca",
+        namr = "Async Function Component",
+        dscr = "Typescript React Async Function Component",
+      }, {
+        luasnip.text_node({
+          "export default async function Page() {",
+          '  return <div className="text-center pt-32 px-5"></div>;',
+          "}",
+        }),
+      }),
     })
     --- end of change
 
