@@ -40,3 +40,5 @@ vim.opt.cursorline = false
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append({ "r" })
+
+vim.opt.foldmethod = "manual"
