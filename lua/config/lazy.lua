@@ -7,6 +7,51 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
+-- Copy Images and add then to public/images/ directory
+local function move_image_to_public_images()
+  -- Prompt user for the full path of the image file
+  local src_path = vim.fn.input("Enter full path of image file: ")
+
+  -- Define destination directory and file path
+  local dest_dir = vim.fn.expand("public/images")
+  local file_name = vim.fn.fnamemodify(src_path, ":t") -- Extract file name from path
+  local dest_path = dest_dir .. "/" .. file_name
+
+  -- Print paths for debugging
+  print("Source Path: " .. src_path)
+  print("Destination Path: " .. dest_path)
+
+  -- Check if the source file exists
+  if vim.fn.filereadable(src_path) == 1 then
+    -- Check if the destination directory exists, create if not
+    if vim.fn.isdirectory(dest_dir) == 0 then
+      local create_dir_command = "mkdir -p " .. vim.fn.shellescape(dest_dir)
+      local dir_creation_output = vim.fn.system(create_dir_command)
+      if vim.v.shell_error ~= 0 then
+        print("Failed to create destination directory. Output: " .. dir_creation_output)
+        return
+      end
+    end
+
+    -- Construct the copy command
+    local command = "cp " .. vim.fn.shellescape(src_path) .. " " .. vim.fn.shellescape(dest_path)
+
+    -- Execute the command and capture output and error messages
+    local output = vim.fn.system(command)
+    local success = vim.v.shell_error == 0
+
+    if success then
+      print("File copied successfully!")
+    else
+      print("Failed to copy the file. Output: " .. output)
+    end
+  else
+    print("Source file does not exist.")
+  end
+end
+
+-- Create a Vim command to run the function
+vim.api.nvim_create_user_command("MoveImage", move_image_to_public_images, {})
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
