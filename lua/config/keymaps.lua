@@ -39,6 +39,11 @@ keymap.set("n", "<C-S-l>", "<C-w>>")
 keymap.set("n", "<C-S-k>", "<C-w>+")
 keymap.set("n", "<C-S-j>", "<C-w>-")
 
+-- Oil vim
+keymap.set("n", "-", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })
+-- move Image
+keymap.set("n", "<leader>ip", ":MoveImage<CR>", { noremap = true, silent = true })
+
 -- Diagnostics
 keymap.set("n", "<C-j>", function()
   vim.diagnostic.goto_next()
