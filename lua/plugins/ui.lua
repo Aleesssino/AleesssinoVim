@@ -107,7 +107,7 @@ return {
         },
         sections = {
           lualine_a = {
-            { "mode", separator = { left = " ", right = "" }, icon = "" },
+            { "mode", separator = { left = "", right = "" }, icon = "" },
           },
           lualine_b = {
             {
@@ -137,7 +137,7 @@ return {
           },
           lualine_y = { clients_lsp },
           lualine_z = {
-            { "location", separator = { left = "", right = " " }, icon = "" },
+            { "location", separator = { left = "", right = "" }, icon = "" },
           },
         },
         inactive_sections = {
