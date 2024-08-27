@@ -84,8 +84,12 @@ https://github.com/Aleesssino/AleesssinoVim/assets/97041873/095f9f0c-55f0-4dbd-8
   ```
 
   
-  Refer to the comments in the files on how to customize **AleesssinoVim** & **https://www.lazyvim.org/**.
+  Refer to the comments in the files on how to customize **AleesssinoVim** & [**https://www.lazyvim.org/**](https://www.lazyvim.org/).
   </hr>
   Make it yours!
 
 </details>
+
+For a better understanding of the main concepts behind this Neovim configuration, check out [**TJ's video**](https://youtu.be/m8C0Cq9Uv9o?si=dEQT3MJPPej9DtUp) — it provides a clear explanation of what's going on.
+
+
