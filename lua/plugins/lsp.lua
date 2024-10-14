@@ -42,8 +42,9 @@ return {
         },
         tailwindcss = {},
         tsserver = {
-          root_dir = function(...)
-            return require("lspconfig.util").root_pattern(".git")(...)
+          root_dir = function(fname)
+            return require("lspconfig.util").root_pattern("tsconfig.json", "package.json", ".git")(fname)
+              or require("lspconfig.util").path.dirname(fname)
           end,
           single_file_support = false,
           settings = {

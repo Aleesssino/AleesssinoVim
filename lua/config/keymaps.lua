@@ -41,6 +41,10 @@ keymap.set("n", "<C-S-j>", "<C-w>-")
 
 -- Oil vim
 keymap.set("n", "-", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })
+
+-- Special
+-- open current file (html..) in browser
+keymap.set("n", "<Leader>io", ":!xdg-open %<CR>", opts)
 -- move Image
 keymap.set("n", "<leader>ip", ":MoveImage<CR>", { noremap = true, silent = true })
 
