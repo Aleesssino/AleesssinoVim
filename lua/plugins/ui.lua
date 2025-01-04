@@ -86,6 +86,15 @@ return {
         return " " .. table.concat(c, "&")
       end
 
+      -- Custom component to show macro recording status
+      local macro_recording = function()
+        local recording_register = vim.fn.reg_recording()
+        if recording_register ~= "" then
+          return " Recording @" .. recording_register -- Show the register being recorded
+        end
+        return "" -- Empty string when not recording
+      end
+
       local custom_osaka = require("lualine.themes.auto")
 
       -- Custom colours
@@ -135,7 +144,13 @@ return {
               update_in_insert = true,
             },
           },
-          lualine_y = { clients_lsp },
+          lualine_y = {
+            clients_lsp,
+            {
+              macro_recording,
+              color = { fg = "#FFA500" }, -- Apply orange color here
+            },
+          },
           lualine_z = {
             { "location", separator = { left = "", right = "" }, icon = "" },
           },

@@ -7,13 +7,23 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
--- Copy Images and add then to public/images/ directory
+-- My Custom functions ---------------------------------------------------------------------
+
+-- Copy Images/(or other files) and add them to public/images/ directory
+-- -- --
 local function move_image_to_public_images()
   -- Prompt user for the full path of the image file
   local src_path = vim.fn.input("Enter full path of image file: ")
 
-  -- Define destination directory and file path
-  local dest_dir = vim.fn.expand("public/images")
+  -- Prompt user for the destination directory (with default to public/images)
+  local dest_dir = vim.fn.input("Enter destination directory (default: public/images): ", "public/images")
+
+  -- Check if the user just pressed Enter (empty input)
+  if dest_dir == "" then
+    dest_dir = "public/images" -- Use the default if no input
+  end
+
+  -- Define file name and destination path
   local file_name = vim.fn.fnamemodify(src_path, ":t") -- Extract file name from path
   local dest_path = dest_dir .. "/" .. file_name
 
@@ -33,6 +43,15 @@ local function move_image_to_public_images()
       end
     end
 
+    -- Check if the destination file already exists
+    if vim.fn.filereadable(dest_path) == 1 then
+      local overwrite = vim.fn.input("File already exists. Overwrite? (y/n): ")
+      if overwrite ~= "y" then
+        print("File copy cancelled.")
+        return
+      end
+    end
+
     -- Construct the copy command
     local command = "cp " .. vim.fn.shellescape(src_path) .. " " .. vim.fn.shellescape(dest_path)
 
@@ -43,15 +62,17 @@ local function move_image_to_public_images()
     if success then
       print("File copied successfully!")
     else
-      print("Failed to copy the file. Output: " .. output)
+      print("Failed to copy the file. Error: " .. output)
     end
   else
     print("Source file does not exist.")
   end
 end
 
--- Create a Vim command to run the function
 vim.api.nvim_create_user_command("MoveImage", move_image_to_public_images, {})
+-- -- -- ---
+------------
+
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins

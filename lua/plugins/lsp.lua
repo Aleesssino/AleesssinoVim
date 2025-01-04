@@ -149,4 +149,9 @@ return {
       table.insert(opts.sources, { name = "emoji" })
     end,
   },
+  {
+    "Chaitanyabsprip/fastaction.nvim",
+    ---@type FastActionConfig
+    opts = {},
+  },
 }

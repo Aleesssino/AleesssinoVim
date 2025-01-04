@@ -57,6 +57,47 @@ return {
         }),
       }),
     })
+
+    --Snippet for arrow functions
+    luasnip.add_snippets("javascript", {
+      luasnip.snippet("aw", {
+        luasnip.text_node("const "),
+        luasnip.insert_node(1, "name"),
+        luasnip.text_node(" = ("),
+        luasnip.insert_node(2, "param"),
+        luasnip.text_node(") => { "),
+        luasnip.insert_node(3, "body"),
+        luasnip.text_node(" };"),
+      }),
+    })
+
+    luasnip.add_snippets("typescript", {
+      luasnip.snippet("aw", {
+        luasnip.text_node("const "),
+        luasnip.insert_node(1, "name"),
+        luasnip.text_node(": "),
+        luasnip.insert_node(2, "type"),
+        luasnip.text_node(" = ("),
+        luasnip.insert_node(3, "param"),
+        luasnip.text_node(") => { "),
+        luasnip.insert_node(4, "body"),
+        luasnip.text_node(" };"),
+      }),
+    })
+
+    luasnip.add_snippets("typescriptreact", {
+      luasnip.snippet("aw", {
+        luasnip.text_node("const "),
+        luasnip.insert_node(1, "name"),
+        luasnip.text_node(": "),
+        luasnip.insert_node(2, "type"),
+        luasnip.text_node(" = ("),
+        luasnip.insert_node(3, "param"),
+        luasnip.text_node(") => { "),
+        luasnip.insert_node(4, "body"),
+        luasnip.text_node(" };"),
+      }),
+    })
     --- end of change
 
     local lspkind = require("lspkind")
